@@ -10,6 +10,9 @@
 require_once TC_CORE_PATH . 'settings/customizer.php';
 require_once TC_CORE_PATH . 'settings/ajax.php';
 require_once TC_CORE_PATH . 'settings/post-types.php';
+require_once TC_CORE_PATH . 'settings/enqueues.php';
+//require_once TC_CORE_PATH . 'settings/app-notifier.php';
+
 /**
  *  AJAX
  */
