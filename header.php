@@ -22,35 +22,33 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header>
-    <div class="row">
-        <div class="twelve columns">
-            <div class="logo">
-                <a href="index.html"><img alt="" src="<?= get_template_directory_uri() ?>/assets/images/logo.png"></a>
-            </div>
+<a id="top" href=""></a>
 
-            <nav id="nav-wrap">
-                <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-                <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-                <ul id="nav" class="nav">
-                    <li class="current"><a href="index.htm">Home</a></li>
-                    <li><span><a href="blog.html">Blog</a></span>
-                        <ul>
-                            <li><a href="blog.html">Blog Index</a></li>
-                            <li><a href="single.html">Post</a></li>
-                        </ul>
-                    </li>
-                    <li><span><a href="portfolio-index.html">Portfolio</a></span>
-                        <ul>
-                            <li><a href="portfolio-index.html">Portfolio Index</a></li>
-                            <li><a href="portfolio.html">Portfolio Entry</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="styles.html">Features</a></li>
-                </ul> <!-- end #nav -->
-            </nav> <!-- end #nav-wrap -->
+
+<div class="navigation">
+	<div class="branding">
+		<a href="#top"><img src="<?= get_template_directory_uri(); ?>/assets/logo.svg" alt=""></a>
+	</div>
+
+		<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+		<div class="main-nav">
+		<div class="nav-list">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-1',
+					'menu_class'     => 'nav-items',
+					'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
+				)
+			);
+			?>
+		</div>
+	<?php endif; ?>
+
+
+        <div class="nav-cta">
+            <a class="login" href="javascript:">Log in</a>
+            <a class="get-started button" href="javascript:">Get started</a>
         </div>
-    </div>
-</header> <!-- Header End -->
+	</div>
+</div>
