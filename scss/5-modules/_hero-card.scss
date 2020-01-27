@@ -1,0 +1,59 @@
+.hero-card {
+    position: absolute;
+    left: 165px;
+    bottom: -100px;
+    width: 635px;
+    height: 382px;
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.06);
+    background-color: getColor(Light);
+    padding: 40px;
+
+    p {
+        font-size: 20px !important;
+        line-height: 1.4;
+        letter-spacing: -0.3px;
+        // margin-bottom: 30px;
+
+        @include xs{
+            font-size: 18px!important;
+        }
+    }
+
+    .cta{
+        position: absolute;
+        bottom: 40px;
+        width: calc(100% - 80px);
+        display: flex;
+        justify-content: space-between;
+
+        .controls{
+            display: flex;
+
+        }
+
+        @include xs{
+            width: calc(100% - 60px);
+            bottom: 30px;
+        }
+
+
+    }
+
+    @include md{
+        left: 47px;
+        width: 690px;
+    }
+
+    @include sm{
+        width: 100%;
+        left: 0;
+        max-height: 382px;
+        top: 300px;
+    }
+
+    @include xs{
+        padding: 30px;
+        max-height: 314px;
+        top: 160px;
+    }
+}

@@ -1,0 +1,71 @@
+/* -- Variables / Definition -- */
+$colors: (Sky: #0cabf3,
+    Sky-med: #86d5f9,
+    Sky-light: #b6e6fb,
+    Sky-dark:#0a89c2,
+    Gray: #797c86,
+    Stone:#494a50,
+    Dark: #303236,
+    Darker: #18191b,
+    Silver: #afb0b6,
+    Ashen: #e4e5e7,
+    Ash: #f2f2f3,
+    Light: #ffffff);
+
+/* -- Functions -- */
+@function getColor($name) {
+    @return map-get($colors, $name);
+}
+
+@function colorOpacity($color, $percentage) {
+    $opacity: $percentage / 100;
+    @return rgba($color, $opacity);
+}
+
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
+
+.bg-sky {
+    background-color: getColor(Sky);
+}
+
+.bg-sky-light {
+    background-color: getColor(Sky-light);
+}
+
+.bg-sky-dark {
+    background-color: getColor(Sky-dark);
+}
+
+.bg-silver {
+    background-color: getColor(Silver);
+}
+
+.bg-ash {
+    background-color: getColor(Ash);
+}
+
+.bg-gray {
+    background-color: getColor(Gray);
+}
+
+.bg-dark {
+    background-color: getColor(Dark);
+}
+
+.bg-darker{
+    background-color: getColor(Darker);
+}
+
+.t-light {
+    color: getColor(Light);
+}
+
+.t-dark {
+    color: getColor(Dark);
+}

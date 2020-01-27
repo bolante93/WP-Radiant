@@ -1,0 +1,14 @@
+/*
+    SMASC
+    Scalable and Modular Architecture for Sassy CSS
+    by Chris Javier Oliveros
+*/
+
+@import './0-plugins/plugins-dir';
+@import './1-main/main-dir';
+@import './2-inheritance/inheritance-dir';
+@import './3-base/base-dir';
+@import './4-layout/layout-dir';
+@import './5-modules/modules-dir';
+@import './6-custom/custom-dir';
+@import './7-animation/animations-lib';

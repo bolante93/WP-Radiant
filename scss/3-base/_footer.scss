@@ -1,0 +1,56 @@
+/* 
+    Set default style for footer:
+    e.g. <footer></footer>, .footer
+*/
+
+#footer {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    .copyright {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 20px;
+        text-align: center;
+
+        p {
+            color: #afb0b6;
+
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+
+            @include xs {
+                
+                &:not(:last-child) {
+                    margin-right: 0;
+                }
+            }
+        }
+
+    }
+
+    .terms {
+        text-align: center;
+
+        a {
+            color: #afb0b6;
+            text-decoration: none;
+            line-height: 1.44;
+            letter-spacing: -0.3px;
+            font-size: 18px;
+
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+    }
+
+    @include xs {
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+    }
+}

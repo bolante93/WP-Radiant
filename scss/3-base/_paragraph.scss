@@ -1,0 +1,20 @@
+/* 
+    Set default global styles for paragraph elements:
+    e.g. p, .lead
+*/
+p{
+    color: getColor(Stone);
+    font-size: 18px;
+    font-weight: 400!important;
+    margin: 0;
+    line-height: 1.44;
+    letter-spacing: -0.3px;
+
+    &.phone-text{
+
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}

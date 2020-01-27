@@ -1,0 +1,320 @@
+// Import SCSS Dependencies;
+@import './1-main/sizes';
+@import './1-main/responsive';
+@import './1-main/colors';
+
+.masthead {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: $size-8;
+    padding-bottom: 0 !important;
+    background-color: getColor(Light);
+    overflow: hidden;
+
+    .heading-group {
+        position: relative;
+        padding-right: $size-2;
+        flex-grow: 1;
+        z-index: 2;
+
+       .section-heading{
+
+           h1 {
+            margin-bottom: $size-1;
+            color: getColor(Sky);
+        }
+
+
+       }
+    }
+
+    .preview-wrapper {
+        position: relative;
+        padding-left: $size-2;
+        height: 320px;
+        width: 460px;
+        flex-shrink: 0;
+        z-index: 1;
+
+        [class*="preview-"] {
+            position: absolute;
+            border: 8px solid #ffffff;
+            box-shadow: 0 0 15px rgba(104, 104, 104, 0.2);
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+                object-position: top center;
+            }
+
+        }
+
+        .preview-1 {
+            top: 0;
+            right: 0;
+            z-index: 2;
+            height: 100%;
+            width: 100%;
+        }
+
+        .preview-2 {
+            left: -180px;
+            bottom: 0;
+            width: 240px;
+            height: 260px;
+            z-index: 1;
+        }
+
+    }
+
+    @include xl {
+        padding: $size-7;
+
+        .preview-wrapper {
+            width: 400px;
+
+            .preview-2 {
+                left: -130px;
+            }
+        }
+    }
+
+    @include lg {
+        padding: $size-6;
+
+        .preview-wrapper {
+            width: 380px;
+
+            .preview-2 {
+                display: none;
+            }
+        }
+    }
+
+    @include md {
+        height: 300px;
+        padding: $size-5;
+
+        .heading-group {
+            padding-right: 0;
+        }
+
+        .preview-wrapper {
+            display: none;
+        }
+    }
+
+    @include sm {
+        padding: $size-4;
+    }
+
+
+}
+
+/* Section Colors*/
+.colors {
+    display: flex;
+
+    .primary,
+    .secondary,
+    .neutral {
+        width: 40%;
+        margin-bottom: 32px;
+
+        .circles {
+            display: flex;
+
+            .round {
+                margin-right: 24px;
+                text-align: center;
+
+                .color {
+                    width: 120px;
+                    height: 120px;
+                    padding: $size-4;
+                    margin-bottom: 4px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &.base,
+                    &.white {
+                        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+                    }
+
+                    span {
+                        text-transform: uppercase;
+                        font-weight: 400;
+                    }
+
+                    p {
+                        color: getColor(Stone);
+                    }
+                }
+
+
+            }
+        }
+
+        @include md {
+            width: 100%;
+        }
+
+    }
+
+    @include md {
+        display: block;
+    }
+}
+
+/* Section Typography*/
+.font-preview {
+
+    margin-bottom: 20px;
+
+    span {
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    p {
+        color: getColor(Stone);
+    }
+
+    &.regular {
+        font-weight: 400;
+    }
+
+    &.semi-bold {
+        p {
+            font-weight: 600 !important;
+        }
+    }
+
+    &.bold {
+        p {
+            font-weight: 700 !important;
+        }
+    }
+}
+
+.headings {
+
+    h1,
+    h2,
+    h3{
+        margin-bottom: $size-2;
+
+        code {
+            font-size: 14px;
+            font-weight: 400;
+            color: getColor(Sky);
+        }
+    }
+}
+
+
+/* Section Buttons*/
+.buttons {
+
+    .button {
+        margin-bottom: $size-5;
+        display: block;
+
+        &.regular {
+            &:disabled {
+                background-color: getColor(Sky-med);
+            }
+
+            &.hovered {
+                background-color: getColor(Sky-dark);
+            }
+
+        }
+
+        &.outline,
+        &.arrow {
+            &:disabled {
+                color: getColor(Silver);
+                -webkit-box-shadow: inset 0px 0px 0px 1px getColor(Silver);
+                -moz-box-shadow: inset 0px 0px 0px 1px getColor(Silver);
+                box-shadow: inset 0px 0px 0px 1px getColor(Silver);
+
+            }
+
+            &.hovered {
+                background-color: getColor(Ashen);
+            }
+        }
+
+        &.arrow {
+            &:disabled {
+                img {
+                    opacity: .4;
+                }
+            }
+        }
+
+        &.success{
+            background-color: #20bf55;
+            padding: 14px 24px;
+
+            img{
+                height: 14px;
+                width: 18px;
+                margin-right: 10px;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .social-links {
+        display: flex;
+    }
+
+    .arrows{
+        display: flex;
+    }
+
+}
+
+/*Section Form Elements*/
+.form{
+    p{
+        font-size: 14px;
+        padding-bottom: 8px;
+        color: #4f4c4d;
+    }
+    
+    .active{
+
+        &::placeholder{
+            color: #4f4c4d;
+        }
+       
+    }
+
+    .error{
+        border-color: #d0021b;
+
+        &::placeholder{
+            color: #d0021b;
+        }
+    }
+}
+
+.hero-card{
+    position: relative;
+    left: 0;
+    margin-bottom: 40px;
+}
+
+.testimonials{
+    margin-top: 60px;
+    .slider{
+        justify-content: flex-start;
+    }
+}
+

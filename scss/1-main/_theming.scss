@@ -1,0 +1,22 @@
+@import './theming-functions';
+
+$default: ( // Tip: You can always add your own custom color group;
+    // it will be generated as its own css variable;
+
+    Primary: (#0cabf3),
+    Secondary: (#b6e6fb, #86d5f9, #0a89c2),
+
+    // Do not include Black and White here;
+    // as they are already packaged by default;
+    Neutral: (#ffffff, #f2f2f3, #afb0b6 , #e4e5e7),
+    Neutral-dark:(#494a50, #303236),
+
+    // Default Input Colors
+    Input: ((Success: #2fd12f),
+        (Warning: #eca622),
+        (Danger: #da1d1d)));
+
+
+.bg-neutral-1 {
+    background-color: getColor(Neutral-1);
+}

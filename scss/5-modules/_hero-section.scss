@@ -1,0 +1,187 @@
+* {
+    // outline: 1px solid red;
+}
+
+.hero-section {
+    position: relative;
+    background-color: getColor(Ash);
+    height: 620px;
+    width: 100%;
+    z-index: 8;
+
+    .slide-wrapper {
+        position: relative;
+        width: 100%;
+        height: calc(100% - 100px);
+        overflow: hidden;
+        display: flex;
+        z-index: 8;
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            z-index: 9;
+
+            @for $i from 1 through 6 {
+                &:nth-last-child(#{$i}n) {
+                    z-index: #{$i};
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top center;
+                transition: all 350ms cubic-bezier(0.575, 0.070, 0.465, 0.975);
+            }
+
+            &.active {
+                img {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                }
+            }
+
+            &.edge-active {
+                z-index: 10;
+            }
+
+            &.fold {
+                img {
+                    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+                }
+            }
+
+            &.unfold {
+                img {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                }
+            }
+
+            &.ss-override-right{
+               img{
+                @include ss{
+                   object-position: right center; 
+                }
+               }
+            }
+
+            &.ss-override-left{
+                img{
+                 @include ss{
+                    object-position: left center; 
+                 }
+                }
+             }
+
+        }
+
+    }
+
+    .global-wrapper {
+        position: relative;
+        height: 100px;
+        z-index: 9;
+    }
+
+    @include md {
+        height: 580px;
+    }
+
+    @include sm {
+        height: auto;
+
+        .slide-wrapper {
+            height: 300px;
+            flex-shrink: 0;
+        }
+
+        .global-wrapper {
+            height: auto;
+            padding: 0;
+            flex-shrink: 0;
+        }
+    }
+
+    @include xs {
+        height: auto;
+
+        .slide-wrapper {
+            height: 160px;
+        }
+    }
+
+
+}
+
+.hero-card-wrapper {
+    position: absolute;
+    bottom: 0;
+
+    .hero-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 635px;
+        box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.06);
+        background-color: getColor(Light);
+        padding: 40px;
+        z-index: -1;
+        display: table-cell;
+        opacity: 0;
+
+        &.edge-active,
+        &.active {
+            position: relative;
+            opacity: 1;
+            z-index: 1;
+        }
+
+        p {
+            font-size: 20px !important;
+            padding-bottom: 30px;
+            margin-bottom: 48px;
+            line-height: 28px;
+
+            @include xs {
+                font-size: 18px !important;
+            }
+        }
+
+        .cta {
+            position: absolute;
+            bottom: 40px;
+            width: calc(100% - 80px);
+            display: flex;
+            justify-content: space-between;
+
+            .controls {
+                display: flex;
+            }
+
+            @include xs {
+                width: calc(100% - 60px);
+            }
+        }
+
+        @include xs {
+            padding: 30px;
+
+        }
+
+
+    }
+
+    @include sm {
+        position: relative;
+
+        .hero-card {
+            width: 100%;
+        }
+    }
+
+}
