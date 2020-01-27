@@ -15,7 +15,7 @@
             </p>
         </div>
         <div class="post-thumb">
-            <a href="#" title=""><img src="<?php echo get_the_post_thumbnail_url( $post->ID ) ?>" alt="post-image" title="post-image"></a>
+            <a href="#" title=""><img src="<?php echo get_the_post_thumbnail_url( $post->ID) ?>" alt="post-image" title="post-image"></a>
         </div>
         <div class="post-content">
             <p> <?php the_excerpt(); ?> </p>
