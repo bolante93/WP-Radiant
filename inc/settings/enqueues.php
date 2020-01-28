@@ -29,3 +29,14 @@ function tyreconnect_scripts() {
     wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', null, '3.4.1', false);
     wp_enqueue_script('jquery');
 }
+
+
+/**
+ * Admin Scripts
+ */
+add_action( 'admin_enqueue_scripts'  , 'admin_enqueue_style' );
+add_action( 'wp_enqueue_scripts', function(){
+    wp_register_script( 'my_ajax_script', get_template_directory_uri() . '/js/ajax.js', array( 'jquery' ), '0.1.0' );
+    wp_localize_script( 'my_ajax_script', 'my_ajax_url', ['admin_url' => admin_url( 'admin-ajax.php' )] );
+    wp_enqueue_script('my_ajax_script');
+});
