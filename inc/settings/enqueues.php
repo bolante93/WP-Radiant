@@ -1,16 +1,13 @@
 <?php
-add_action( 'wp_enqueue_scripts', 'tyreconnect_scripts' );
 
 /**
  * Enqueue scripts and styles.
  */
+add_action( 'wp_enqueue_scripts', 'tyreconnect_scripts' );
 function tyreconnect_scripts() {
-    //wp_enqueue_style( 'tyreconnect-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
+
     wp_enqueue_style( 'tyreconnect-style', get_template_directory_uri().'/assets/css/main.css', array(), wp_get_theme()->get( 'Version' ) );
     wp_enqueue_style( 'editor-style', get_template_directory_uri().'/style.css', array(), wp_get_theme()->get( 'Version' ) );
-    //wp_enqueue_style( 'tyreconnect-swiper-min', get_template_directory_uri().'/css/swiper.min.css', array('tyreconnect-style'), wp_get_theme()->get( 'Version' ) );
-    //wp_enqueue_style( 'tyreconnect-ui-library', get_template_directory_uri().'/css/ui-library.css', array(), wp_get_theme()->get( 'Version' ) );
-
     wp_style_add_data( 'tyreconnect-style', 'rtl', 'replace' );
 
     if ( has_nav_menu( 'menu-1' ) ) {
@@ -25,16 +22,15 @@ function tyreconnect_scripts() {
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
+
     wp_deregister_script('jquery');
     wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', null, '3.4.1', false);
     wp_enqueue_script('jquery');
 }
 
-
 /**
  * Admin Scripts
  */
-add_action( 'admin_enqueue_scripts'  , 'admin_enqueue_style' );
 add_action( 'wp_enqueue_scripts', function(){
     wp_register_script( 'my_ajax_script', get_template_directory_uri() . '/js/ajax.js', array( 'jquery' ), '0.1.0' );
     wp_localize_script( 'my_ajax_script', 'my_ajax_url', ['admin_url' => admin_url( 'admin-ajax.php' )] );

@@ -3,7 +3,6 @@
 /**
  * Primera theme plugin requirements
  */
-
 /**
  * Theme core settings
 */
@@ -13,11 +12,9 @@ require_once TC_CORE_PATH . 'settings/post-types.php';
 require_once TC_CORE_PATH . 'settings/enqueues.php';
 require_once TC_CORE_PATH . 'settings/app-notifier.php';
 require_once TC_CORE_PATH . 'settings/setup.php';
-
 /**
  *  AJAX
  */
-
 /**
  * Theme options settings
  */

@@ -58,7 +58,6 @@ function tyreconnect_custom_mime_types( $mimes ) {
  */
 add_action( 'widgets_init', 'tyreconnect_widgets_init' );
 function tyreconnect_widgets_init() {
-
 	register_sidebar(
 		array(
 			'name'          => __( 'Footer', 'tyreconnect' ),
@@ -70,7 +69,6 @@ function tyreconnect_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
-
 }
 
 
