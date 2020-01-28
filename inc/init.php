@@ -12,6 +12,8 @@ require_once TC_CORE_PATH . 'settings/post-types.php';
 require_once TC_CORE_PATH . 'settings/enqueues.php';
 require_once TC_CORE_PATH . 'settings/app-notifier.php';
 require_once TC_CORE_PATH . 'settings/setup.php';
+require_once TC_CORE_PATH . 'theme-functions.php';
+
 /**
  *  AJAX
  */

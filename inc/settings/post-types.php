@@ -1,9 +1,9 @@
 <?php
 //add_action( 'init', 'tyreconnect_testimonials_post_type' );
-//add_action( 'init', 'tyreconnect_hero_post_type' );
+add_action( 'init', 'tyreconnect_register_post_type' );
 
-function tyreconnect_testimonials_post_type() {
-    $args = [
+function tyreconnect_register_post_type() {
+    $testimonial = [
         'name' => 'testimonials',
         'label' => 'testimonials',
         'singular_name' => 'Testimonials',
@@ -17,23 +17,23 @@ function tyreconnect_testimonials_post_type() {
         'show_ui' => true
 
     ];
-    register_post_type('testimonials', $args );
-}
 
-function tyreconnect_hero_post_type() {
-    $args = [
-        'name' => 'hero',
-        'singular_name' => 'Hero Section',
-        'label' => 'Hero Section',
+    //register_post_type('testimonials', $testimonial );
+
+    $blog = [
+        'name' => 'blog',
+        'singular_name' => 'Blog',
+        'label' => 'Blog',
         'show_in_rest' => true,
-        'menu_icon' => 'dashicons-images-alt',
+        'menu_icon' => 'dashicons-format-quote',
         'show_in_menu  ' => true,
         'public' => true,
         'hierarchical' => false,
-        'menu_position' => 51,
-        'supports' => array('title'),
+        'menu_position' => 5,
+        'supports' => array('title', 'thumbnail', 'editor'),
         'show_ui' => true
 
     ];
-    register_post_type('hero', $args );
+    register_post_type('blog', $blog );
 }
+

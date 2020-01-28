@@ -7,6 +7,7 @@ add_action( 'wp_enqueue_scripts', 'tyreconnect_scripts' );
 function tyreconnect_scripts() {
 
     wp_enqueue_style( 'tyreconnect-style', get_template_directory_uri().'/assets/css/main.css', array(), wp_get_theme()->get( 'Version' ) );
+    wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', array(), wp_get_theme()->get( 'Version' ) );
     wp_enqueue_style( 'editor-style', get_template_directory_uri().'/style.css', array(), wp_get_theme()->get( 'Version' ) );
     wp_style_add_data( 'tyreconnect-style', 'rtl', 'replace' );
 

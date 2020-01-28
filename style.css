@@ -26,3 +26,16 @@ Tags: tyreconnect
     max-width: 30px!important;
     border-radius: 50%!important;
 }
+
+ul.category-list li{
+    list-style: none;
+    display: inline-block;
+    background: #f2f2f3;
+    padding: 5px 10px;
+}
+
+ul.category-list li p{
+    color: #494a50;
+}
+
+
