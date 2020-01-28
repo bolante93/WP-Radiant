@@ -184,16 +184,7 @@ if ( ! function_exists( 'tyreconnect_setup' ) ) :
 		add_theme_support(
 			'editor-color-palette',
 			array(
-				array(
-					'name'  => 'default' === get_theme_mod( 'primary_color' ) ? __( 'Blue', 'tyreconnect' ) : null,
-					'slug'  => 'primary',
-					'color' => tyreconnect_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 199 : get_theme_mod( 'primary_color_hue', 199 ), 100, 33 ),
-				),
-				array(
-					'name'  => 'default' === get_theme_mod( 'primary_color' ) ? __( 'Dark Blue', 'tyreconnect' ) : null,
-					'slug'  => 'secondary',
-					'color' => tyreconnect_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 199 : get_theme_mod( 'primary_color_hue', 199 ), 100, 23 ),
-				),
+
 				array(
 					'name'  => __( 'Dark Gray', 'tyreconnect' ),
 					'slug'  => 'dark-gray',
@@ -314,32 +305,3 @@ function tyreconnect_colors_css_wrap() {
 }
 add_action( 'wp_head', 'tyreconnect_colors_css_wrap' );
 
-/**
- * SVG Icons class.
- */
-require get_template_directory() . '/classes/class-tyreconnect-svg-icons.php';
-
-/**
- * Custom Comment Walker template.
- */
-require get_template_directory() . '/classes/class-tyreconnect-walker-comment.php';
-
-/**
- * Enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * SVG Icons related functions.
- */
-require get_template_directory() . '/inc/icon-functions.php';
-
-/**
- * Custom template tags for the theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Customizer additions.
- */
-//require get_template_directory() . '/inc/customizer.php';
