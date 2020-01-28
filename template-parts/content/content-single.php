@@ -22,5 +22,10 @@
             <?php category_walker(); ?>
         </div>
 
+        <div class="col-md-12">
+            <?php comments_template();  ?>
+        </div>
+
+
 
     </div>

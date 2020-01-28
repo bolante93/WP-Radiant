@@ -38,4 +38,24 @@ ul.category-list li p{
     color: #494a50;
 }
 
+.comment.parent{
+    background: #f5f5f5;
+    padding: 10px 20px;
+}
+.comment.child{
+    background: #fff;
+    padding: 10px;
+    padding-left: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
 

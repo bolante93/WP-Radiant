@@ -24,6 +24,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
  * Theme core files
  */
 require_once TC_CORE_PATH . 'init.php';
+require_once get_theme_file_path() . '/classes/class-twentytwenty-walker-comment.php';
 
 add_filter( 'block_categories', 'gavilan_blocks', 10, 2);
 function gavilan_blocks( $categories, $post ) {
