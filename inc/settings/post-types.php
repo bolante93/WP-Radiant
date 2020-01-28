@@ -1,6 +1,6 @@
 <?php
-add_action( 'init', 'tyreconnect_testimonials_post_type' );
-add_action( 'init', 'tyreconnect_hero_post_type' );
+//add_action( 'init', 'tyreconnect_testimonials_post_type' );
+//add_action( 'init', 'tyreconnect_hero_post_type' );
 
 function tyreconnect_testimonials_post_type() {
     $args = [
