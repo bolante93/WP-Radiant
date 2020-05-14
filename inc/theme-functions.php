@@ -107,9 +107,6 @@ function twentytwenty_site_description( $echo = true ) {
 }
 
 /**
- * Comments
- */
-/**
  * Check if the specified comment is written by the author of the post commented on.
  *
  * @param object $comment Comment data.
@@ -472,9 +469,6 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 }
 
 /**
- * Menus
- */
-/**
  * Filter Classes of wp_list_pages items to match menu items.
  * Filter the class applied to wp_list_pages() items with children to match the menu class, to simplify.
  * styling of sub levels in the fallback. Only applied if the match_menu_classes argument is set.
@@ -583,9 +577,6 @@ function twentytwenty_nav_menu_social_icons( $item_output, $item, $depth, $args 
 
 add_filter( 'walker_nav_menu_start_el', 'twentytwenty_nav_menu_social_icons', 10, 4 );
 
-/**
- * Classes
- */
 /**
  * Add No-JS Class.
  * If we're missing JavaScript support, the HTML element will have a no-js class.
@@ -698,9 +689,6 @@ function twentytwenty_body_classes( $classes ) {
 
 add_filter( 'body_class', 'twentytwenty_body_classes' );
 
-/**
- * Archives
- */
 /**
  * Filters the archive title and styles the word before the first colon.
  *

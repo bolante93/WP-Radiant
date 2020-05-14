@@ -8,6 +8,7 @@
  */
 
 if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
+
 	/**
 	 * CUSTOM COMMENT WALKER
 	 * A custom walker for comments, based on the walker in Twenty Nineteen.
@@ -133,9 +134,7 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 						<?php
 					}
 					?>
-
-				</article><!-- .comment-body -->
-
+				</article>
 			<?php
 		}
 	}

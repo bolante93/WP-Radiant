@@ -8,15 +8,15 @@ function post_published_notification( $new_status, $old_status, $post ) {
         $author = $post->post_author; /* Post author ID. */
         $name = get_the_author_meta( 'display_name', $author );
         $thumb = get_the_post_thumbnail_url($post->ID);
-
+        $thumb = explode( site_url(), $thumb  )[1];
 
         $post_data = [
             'title' => $post->post_title,
-            'author'=> $name,
+            'body' => get_the_excerpt($post->ID),
             'id' => $post->ID,
-            'thumb' => $thumb,
+            'thumb' => 'http://192.168.0.115/projects/wordpress/WP-Plugins'.$thumb,
         ];
-        $response = wp_remote_request( 'http://192.168.0.115:5000/api/v1/notification/new-post',
+        $response = wp_remote_request( 'http://192.168.0.115:3000/notification/',
             array(
                 'method' => 'POST',
                 'body' => $post_data
