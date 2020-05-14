@@ -1,2 +1,2 @@
 # WP-Themeboiler
- Gavilan Arts wordpress boilerplate
+ Gavilan Arts wordpress boilerplate with SMASC
