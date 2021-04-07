@@ -25,13 +25,8 @@ class Actions
         );
         $args = wp_parse_args( $args, $defaults )
         ?>
-        <section class="hero mini gradient-hero">
+        <header class="hero mini gradient-hero">
             <div class="global-wrapper section-padding">
-                <div class="logo">
-                    <a href="<?php echo get_home_url() ?>">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/cloud-radius.svg" alt="" />
-                    </a>
-                </div>
                 <div class="heading">
                     <?php if ( is_home() ): ?>
                         <h1 class="light"><?php echo get_bloginfo('name') ?></h1>
@@ -40,8 +35,9 @@ class Actions
                         <h1 class="light"><?php echo get_the_title() ?></h1>
                     <?php endif; ?>
                 </div>
+                <?php Components::admin_controls(); ?>
             </div>
-        </section>
+        </header>
         <?php
     }
 

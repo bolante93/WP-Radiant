@@ -19,6 +19,7 @@ class Scripts extends Theme
         wp_enqueue_style(WP_SMASCSS_TXT_DOMAIN . '-style');
         wp_enqueue_script(WP_SMASCSS_TXT_DOMAIN . '-bootstrap-bundle');
         wp_enqueue_script(WP_SMASCSS_TXT_DOMAIN . '-main');
+        wp_enqueue_script('ionicons', 'https://unpkg.com/ionicons@5.4.0/dist/ionicons.js');
     }
 
     public static function instance(): ?Scripts
