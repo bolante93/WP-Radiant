@@ -8,14 +8,7 @@
  */
 
 use admin\options\Options;
-add_action('google_font_url', function( $urls ){
-    $urls['Roboto1'] = [
-        'url' => 'https://fonts.googleapis.com/css2?family=Roboto1:wght@100;300;400;700&display=swap',
-        'media' => 'print'
-    ];
-    unset($urls['Roboto']);
-    return $urls;
-}, 99);
+
 require_once 'includes/constants.php';
 require_once 'vendor/autoload.php';
 require_once 'plugins/meta-box/meta-box.php';
@@ -27,9 +20,9 @@ add_action('after_setup_theme', function () {
     remove_filter( 'the_content', 'wpautop' );
     remove_filter( 'the_excerpt', 'wpautop' );
     new classes\Actions();
-    new \classes\Filters();
-    new \admin\options\Options();
-    classes\Scripts::instance()->setVersion(Options::get('version'));
+    new classes\Filters();
+    new admin\options\Options();
+    new classes\Scripts();
 });
 
 
