@@ -583,6 +583,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #ffffff;
 }
 
 header::before {
@@ -595,54 +596,29 @@ header::before {
   height: 100%;
   opacity: 0.6;
   background: black;
-  z-index: 8;
+  z-index: 1;
 }
 
-header .header-wrapper {
-  overflow: hidden;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+header .global-wrapper {
+  z-index: 10;
 }
 
-header .header-wrapper h1 {
-  z-index: 9;
-  color: #ffffff;
-}
-
-header .header-wrapper .header-controls {
-  z-index: 9;
+.admin-controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .header-wrapper .header-controls a {
-  color: #ffffff;
-  font-weight: 700;
-  display: inline-block;
-  margin-right: 20px;
-}
-
-header .header-wrapper .header-controls a img {
-  width: 20px;
+.admin-controls a {
   color: #ffffff;
 }
 
-header .header-wrapper .header-controls a:last-child {
-  margin-right: 0;
+.admin-controls li {
+  list-style: none;
+  margin-right: 15px;
+}
+
+.admin-controls li img {
+  width: 30px;
 }
 /*# sourceMappingURL=main.css.map */
