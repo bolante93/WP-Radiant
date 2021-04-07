@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*
-Theme Name: TyreConnect Theme
-Author: TyreConnect
+Theme Name: WP SMASCSS
+Author: IMCO
 Requires at least: WordPress 4.9.6
 Version: 1.4
 License: GNU General Public License v2 or later
@@ -9,47 +9,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: tyreconnect
 Tags: tyreconnect
 */
-.widget-banner #medium-widget{
-  height: unset;
-}
-.single-page section{
-	margin-bottom: unset
-}
-.col, [class*='col-']{
-    padding-left: 0 ;
-    padding-right: 0;
-}
-.swiper-button-next, .swiper-button-prev{
-    background-image: unset!important;
-}
-.medium-widget-article__avatar-picture{
-    max-width: 30px!important;
-    border-radius: 50%!important;
-}
-
-ul.category-list li{
-    list-style: none;
-    display: inline-block;
-    background: #f2f2f3;
-    padding: 5px 10px;
-}
-
-ul.category-list li p{
-    color: #494a50;
-}
-
-.comment.parent{
-    background: #f5f5f5;
-    padding: 10px 20px;
-}
-.comment.child{
-    background: #fff;
-    padding: 10px;
-    padding-left: 50px;
-}
-
-
-
 
 
 
