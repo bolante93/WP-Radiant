@@ -1,0 +1,36 @@
+.home {
+	& --latest-post {
+		padding: 100px 0;
+	}
+
+	.post-container {
+		display: flex;
+		flex-wrap: wrap;
+
+		.post-item {
+			flex: auto;
+			width: 100%;
+			// box-shadow: 0px 0px 12px 0px rgba(188, 188, 188, 0.61);
+			margin-bottom: 20px;
+			padding: 10px;
+			display: flex;
+
+			img {
+				width: 300px;
+				margin-right: 40px;
+			}
+		}
+	}
+}
+
+.active-sidebar {
+	display: flex;
+
+	.post-container {
+		flex-grow: 2;
+		padding: 0 40px;
+	}
+	.sidebar {
+		flex-grow: 1;
+	}
+}

@@ -1,0 +1,11 @@
+.sidebar {
+	ul {
+		li {
+			list-style: none;
+			a {
+				color: getColor(Gray);
+				padding: 8px 0;
+			}
+		}
+	}
+}

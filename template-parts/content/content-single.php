@@ -1,28 +1,24 @@
-
-    <div class="row p-0">
-        <div class="col-md-6">
-            <p>
+<div class="single post">
+    <div class="content-wrapper">
+        <div class="article">
+            <div class="featured-thumbnail">
+                <?php do_action('wp_smascss_post_thumbnail'); ?>
+            </div>
+            <div class="post-date">
                 Posted: <strong><?php echo get_the_date() ?></strong>
-            </p>
+            </div>
+            <div class="post-author">
+                by: <strong><?php echo get_the_author() ?></strong>
+            </div>
+            <?php the_content(); ?>
+            <?php do_action('wp_smascss_after_post_content'); ?>
         </div>
-        <div class="col-md-6 text-right">
-            <p> by: <strong><?php echo get_the_author() ?></strong></p>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12 mb-3">
-            <img class="w-100" src="<?= get_the_post_thumbnail_url() ?>">
-        </div>
-        <div class="col-md-6">
-            <h2> <?php __( the_title(  ), 'tyreconnect') ?> </h2>
-            <?php the_content() ?>
-        </div>
-        <div class="col-md-6 text-right">
-            <?php category_walker(); ?>
-        </div>
-
-        <div class="col-md-12">
-            <?php comments_template();  ?>
+        <div class="sidebar">
+            <?php if ( is_active_sidebar('blog-sidebar') ) : ?>
+                <?php dynamic_sidebar('blog-sidebar') ?>
+            <?php endif; ?>
         </div>
     </div>
+</div>
+
+

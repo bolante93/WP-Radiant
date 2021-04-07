@@ -1,0 +1,25 @@
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.page-numbers {
+		text-decoration: none;
+		padding: 8px 12px;
+		margin: 3px;
+
+		color: getColor(Gray);
+
+		&.prev,
+		&.next {
+			border: 0px;
+			img {
+				width: 30px;
+			}
+		}
+
+		&.current {
+			background-color: getColor(Gray);
+			color: getColor(White);
+		}
+	}
+}

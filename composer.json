@@ -1,0 +1,19 @@
+{
+	"name": "bolante93/wp-smascss",
+	"description": "A wordpress theme that uses composer psr-4 autoloading standard.",
+	"type": "project",
+	"authors": [
+		{
+			"name": "Jay Jules Bolante",
+			"email": "bolante93@gmail.com"
+		}
+	],
+	"minimum-stability": "dev",
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"classes\\": "classes/",
+			"admin\\options\\": "options/"
+		}
+	}
+}

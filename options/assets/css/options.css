@@ -1,0 +1,49 @@
+.section-padding{
+    padding: 30px;
+}
+.border-bottom{
+    border-bottom: 1px solid #CCCCCC;
+}
+.space-bottom{
+    margin-bottom: 20px;
+}
+.option-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.option-container .field-wrapper{
+    width: 50%;
+}
+.option-container .theme-details{
+    width: 50%;
+}
+
+.option-container .theme-details .plugin-item{
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    margin-bottom: 0;
+}
+
+.fields{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+.field{
+    width: 50%;
+    padding: 0 20px;
+}
+.field.w-100{
+    width: 100%;
+    padding: 0 20px;
+}
+.field span{
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.field input[type="text"]{
+    width: 50%;
+}
+.theme-details .details-item{
+    margin-bottom: 40px;
+}

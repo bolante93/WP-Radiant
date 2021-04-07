@@ -1,0 +1,14 @@
+/* 
+    Set default style for footer:
+    e.g. <footer></footer>, .footer
+*/
+
+footer {
+	background-color: #2d3436;
+	color: #fff;
+	.footer-wrapper {
+		padding: 20px;
+		display: flex;
+		justify-content: space-between;
+	}
+}

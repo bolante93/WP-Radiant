@@ -1,0 +1,16 @@
+.comments-list {
+	padding: 10px 20px;
+	.thread-even {
+		padding: 20px 20px;
+		background-color: #f5f5f5;
+	}
+
+	.child-comments {
+		padding-left: 30px;
+		background-color: #f2f2f2;
+		.comment {
+			padding-bottom: 20px;
+			border-bottom: 1px solid #ccc;
+		}
+	}
+}

@@ -1,4 +1,3 @@
-node_modules/
-css/
-css/compressed/
+composer.phar
+/vendor/
 .DS_Store

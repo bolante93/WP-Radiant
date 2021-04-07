@@ -13,6 +13,9 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
 */
+
+use classes\Comment;
+
 if ( post_password_required() ) {
 	return;
 }
@@ -34,7 +37,7 @@ if ( $comments ) {
 				_e( 'Leave a comment', 'twentytwenty' );
 			} elseif ( '1' === $comments_number ) {
 				/* translators: %s: post title */
-				printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'twentytwenty' ), esc_html( get_the_title() ) );
+				printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title' ), esc_html( get_the_title() ) );
 			} else {
 				echo sprintf(
 					/* translators: 1: number of comments, 2: post title */
@@ -43,7 +46,6 @@ if ( $comments ) {
 						'%1$s replies on &ldquo;%2$s&rdquo;',
 						$comments_number,
 						'comments title',
-						'twentytwenty'
 					),
 					number_format_i18n( $comments_number ),
 					esc_html( get_the_title() )
@@ -60,8 +62,8 @@ if ( $comments ) {
 			<?php
 			wp_list_comments(
 				array(
-					'walker'      => new TwentyTwenty_Walker_Comment(),
-					'avatar_size' => 120,
+					'walker'      => new Comment(),
+					'avatar_size' => 65,
 					'style'       => 'div',
 				)
 			);

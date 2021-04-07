@@ -1,5 +1,28 @@
 {
-  "dependencies": {
-    "bootstrap": "^4.4.1"
-  }
+	"name": "wp-smascss",
+	"version": "1.0.0",
+	"description": "A wordpress theme boilerplate for faster developement with SMASCSS.",
+	"main": "/",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bolante93/WP-SMASCSS.git"
+	},
+	"keywords": [
+		"wordpress",
+		"theme",
+		"boilerplate",
+		"smascss"
+	],
+	"author": "Jay Jules Bolante",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/bolante93/WP-SMASCSS/issues"
+	},
+	"homepage": "https://github.com/bolante93/WP-SMASCSS#readme",
+	"dependencies": {
+		"smascss": "git+https://github.com/chrisjavieroliveros/SMASCSS.git"
+	}
 }

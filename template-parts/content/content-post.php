@@ -1,26 +1,24 @@
 <?php
-    while( have_posts() ): the_post();
+/**
+ * Partial template for displaying content a content
+ */
 ?>
-    <article class="post">
-        <div class="entry-header cf">
-            <h1><a href="javascript:" title=""> <?php the_title(); ?> </a></h1>
-            <p class="post-meta">
-                <time class="date" datetime="2014-01-14T11:24">Jan 14, 2014</time>
-                /
-                <span class="categories">
-                     <a href="#">Design</a> /
-                     <a href="#">User Inferface</a> /
-                     <a href="#">Web Design</a>
-                </span>
-            </p>
-        </div>
-        <div class="post-thumb">
-            <a href="#" title=""><img src="<?php echo get_the_post_thumbnail_url( $post->ID) ?>" alt="post-image" title="post-image"></a>
-        </div>
-        <div class="post-content">
-            <p> <?php the_excerpt(); ?> </p>
-        </div>
-    </article> <!-- post end -->
+<!--<div class="post-item">-->
+<!--    --><?php //do_action('wp_smascss_post_thumbnail'); // Apply proper { width & height } img attributes ?>
+<!--    <div class="post-meta">-->
+<!--        <h2>--><?php //echo get_the_title() ?><!--</h2>-->
+<!--        <p> --><?php //echo get_the_excerpt() ?><!-- </p>-->
+<!--        <a href="--><?php //echo esc_url(get_the_permalink()) ?><!--" class="button outline gray"> Read More </a>-->
+<!--    </div>-->
+<!--</div>-->
 
-<?php
-        endwhile;
+<div class="card">
+    <h2 class="light">Design Identity</h2>
+    <p><?php echo get_the_excerpt() ?></p>
+    <a class="button crimson arrow" href="./identity.html">
+        Read More
+        <div class="icon-wrapper">
+            <img src="<?php echo get_template_directory_uri() ?>/assets/images/icon/right-arrow.svg" alt="" />
+        </div>
+    </a>
+</div>

@@ -1,76 +1,66 @@
 <?php
 /**
- * tyreconnect functions and definitions
+ * Theme functions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
- * @subpackage tyreconnect
- * @since 1.0.0
  */
 
-/**
- * tyreconnect only works in WordPress 4.7 or later.
- */
-error_reporting(E_ALL);
-if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
-	require get_template_directory() . '/inc/back-compat.php';
-	return;
-}else{
-    defined( 'TC_CORE_PATH' ) or define( 'TC_CORE_PATH', get_theme_file_path('/inc/') );
+use admin\options\Options;
+add_action('google_font_url', function( $urls ){
+    $urls['Roboto1'] = [
+        'url' => 'https://fonts.googleapis.com/css2?family=Roboto1:wght@100;300;400;700&display=swap',
+        'media' => 'print'
+    ];
+    unset($urls['Roboto']);
+    return $urls;
+}, 99);
+require_once 'includes/constants.php';
+require_once 'vendor/autoload.php';
+require_once 'plugins/meta-box/meta-box.php';
+require_once 'plugins/mb-term-meta/mb-term-meta.php';
+require_once 'options/options.php';
+
+
+add_action('after_setup_theme', function () {
+    remove_filter( 'the_content', 'wpautop' );
+    remove_filter( 'the_excerpt', 'wpautop' );
+    new classes\Actions();
+    new \classes\Filters();
+    new \admin\options\Options();
+    classes\Scripts::instance()->setVersion(Options::get('version'));
+});
+
+
+add_shortcode( 'asset-icon', 'asset_icon' );
+function asset_icon( $atts ) {
+    $atts = shortcode_atts( array(
+        'image_file' => 'copy-icon.svg',
+    ), $atts, 'asset-icon' );
+
+//    wp_die( var_dump($atts) );
+    $theme_uri = get_template_directory_uri() . '/assets/images/icon';
+    $file = $atts['image_file'];
+
+    return '<img src="'. $theme_uri . '/' . $file .'" alt="imco-icon">';
 }
 
-/**
- * Theme core files
- */
-require_once get_theme_file_path() . '/classes/class-twentytwenty-walker-comment.php';
-require_once TC_CORE_PATH . 'init.php';
+add_action( 'admin_action_save_theme_options', function () {
+    if ( ! empty( $_POST['option'] ) && check_admin_referer( '_save_theme_options' ) ) {
 
-
-add_filter( 'block_categories', 'gavilan_blocks', 10, 2);
-function gavilan_blocks( $categories, $post ) {
-    return array_merge(
-        $categories,
-        array(
-            array(
-                'slug' => 'tyreconnect-blocks',
-                'title' => __( 'TyreConnect Blocks', 'tyreconnect' ),
-            ),
-        )
-    );
-}
-
-function admin_enqueue_style( $hook ) { 
-    wp_enqueue_style('bootstrap-4','https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
-}
-
-
-add_filter( 'upload_mimes', 'tyreconnect_custom_mime_types' );
-function tyreconnect_custom_mime_types( $mimes ) {
-    $mimes['svg'] = 'image/svg+xml';
-    $mimes['svgz'] = 'image/svg+xml';
-    unset( $mimes['exe'] );
-    return $mimes;
-}
-
-
-/**
- * Register widget area.
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-add_action( 'widgets_init', 'tyreconnect_widgets_init' );
-function tyreconnect_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => __( 'Footer', 'tyreconnect' ),
-			'id'            => 'sidebar-1',
-			'description'   => __( 'Add widgets here to appear in your footer.', 'tyreconnect' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-
+        if ( isset( $_POST['option'] ) && $option = $_POST['option'] ) {
+            foreach ( $option as $key => $value ){
+                if ( $key === 'fonts' || $key === 'advanced' )
+                    continue;
+                $option[$key] = sanitize_text_field( $value );
+            }
+//            $sanitized_option = serialize( $option );
+//            wp_die( var_dump($option) );
+            update_option('_theme_option', $option );
+        }
+        wp_redirect( $_SERVER['HTTP_REFERER'] );
+        die(0);
+    }
+} );
 

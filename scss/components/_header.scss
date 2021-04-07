@@ -1,0 +1,56 @@
+header {
+	background-image: url("../images/ra-dragon-2nCeVeFWA_c-unsplash.jpg");
+	background-position: 0%;
+	background-size: cover;
+	position: relative;
+	width: 100%;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&::before {
+		content: " ";
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.6;
+		background: black;
+		z-index: 8;
+	}
+	.header-wrapper {
+		overflow: hidden;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		flex-direction: column;
+
+		h1 {
+			z-index: 9;
+			color: #ffffff;
+		}
+
+		.header-controls {
+			z-index: 9;
+			display: flex;
+			a {
+				color: #ffffff;
+				font-weight: 700;
+				display: inline-block;
+				margin-right: 20px;
+				img {
+					width: 20px;
+					color: #ffffff;
+				}
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
