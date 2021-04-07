@@ -115,9 +115,6 @@ class Theme
         );
     }
 
-
-
-
     /**
      * Register additional metaboxes for post
      * and custom post types
@@ -171,6 +168,10 @@ class Theme
         return $meta_boxes;
     }
 
+    /**
+     * Load theme options
+     * and apply settings
+     */
     public function load_common_theme_option() {
         $advanced_options = Options::get('advanced');
         if ( !is_null( $advanced_options['disable_gb_editor'] ) ) {
@@ -182,12 +183,15 @@ class Theme
 
     }
 
-    public function enable_svg_upload($mimes) {
+    /**
+     * Enable or disable svg uploads
+     * @param $mimes
+     * @return mixed
+     */
+    public function enable_svg_upload( $mimes ) {
         $mimes['svg'] = 'image/svg+xml';
         return $mimes;
     }
-
-
 
     /**
      * @return int|string
