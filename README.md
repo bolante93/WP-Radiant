@@ -11,9 +11,16 @@ To install composer, refer to their <a href="https://getcomposer.org/doc/00-intr
 
 After installing composer run `php composer.phar dump-autoload`
 
+- **Actions**
+  -
+  **`wp_smascss_post_thumbnail`**
+  Action for displaying post thumbnails with `width` and `height` attribute.
+
 - **Filters** 
-    -`google_fonts_url` A filter for removing or adding more google fonts
-  
+  -
+  **`google_fonts_url`**
+  A filter for removing or adding more google fonts
+
   _**Example**: Adding new google font `functions.php`_ 
   
   ```php
