@@ -23,8 +23,23 @@ class Actions
             'show_admin_controls' => true,
             'header_text' => 'Latest Posts',
         );
-        $args = wp_parse_args( $args, $defaults )
+        $args = wp_parse_args( $args, $defaults );
+        $locations = get_nav_menu_locations();
+        $menu_id = $locations['navigation_menu'];
+        $menu_items = wp_get_nav_menu_items( $menu_id );
         ?>
+        <nav>
+            <div class="global-wrapper section-padding">
+                <div class="menu-wrapper">
+                    <div class="brand">
+                        <a href="<?php echo get_home_url() ?>">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/logo.svg">
+                        </a>
+                    </div>
+                    <?php generate_menu($menu_items); ?>
+                </div>
+            </div>
+        </nav>
         <header class="hero mini gradient-hero">
             <div class="global-wrapper section-padding">
                 <div class="heading">

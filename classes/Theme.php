@@ -45,6 +45,7 @@ class Theme
         add_action('wp_head', array( $this, 'preload_scripts'), 5 );
         add_filter( 'rwmb_meta_boxes', array( $this, 'theme_register_taxonomy_meta_boxes' ) );
         add_action('admin_init', array( $this, 'load_common_theme_option' ));
+        add_action('widgets_init', array( $this, 'menu_location' ) );
     }
 
 
@@ -193,6 +194,9 @@ class Theme
         return $mimes;
     }
 
+    public function menu_location(){
+        register_nav_menu('navigation_menu', 'Navigation Menu');
+    }
     /**
      * @return int|string
      */
