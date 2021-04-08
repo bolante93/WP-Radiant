@@ -409,6 +409,84 @@ ol {
     Set default global styles for: 
     Navigation <nav></nav>
 */
+nav .global-wrapper.section-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+nav .menu-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav .menu-wrapper .brand img {
+  width: 150px;
+}
+
+nav .menu-wrapper ul.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .menu-wrapper ul.menu li {
+  margin-right: 40px;
+  display: inline-block;
+}
+
+nav .menu-wrapper ul.menu li > ul {
+  display: none;
+  position: absolute;
+  background: #ffffff;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 99;
+  padding: 20px;
+  margin-top: 0px;
+  border: 1px solid #394149;
+}
+
+nav .menu-wrapper ul.menu li > ul > li {
+  margin-bottom: 15px;
+  display: block;
+}
+
+nav .menu-wrapper ul.menu li > ul > li:last-child {
+  margin-bottom: 0;
+}
+
+nav .menu-wrapper ul.menu li:hover > ul {
+  display: block;
+}
+
+nav .menu-wrapper ul.menu li.has-sub::after {
+  position: absolute;
+  margin-left: 5px;
+  content: " ";
+  background-image: url(../../assets/images/icons/chevron-down-outline.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 20px;
+  width: 15px;
+  -webkit-transition-duration: 150ms;
+          transition-duration: 150ms;
+}
+
+nav .menu-wrapper ul.menu li a {
+  color: #394149;
+}
+
 .home --latest-post {
   padding: 100px 0;
 }
