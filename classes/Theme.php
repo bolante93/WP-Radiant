@@ -41,11 +41,12 @@ class Theme
         $this->theme_supports();
 
         add_action('widgets_init', array( $this, 'sidebar') );
+        add_action('widgets_init', array( $this, 'menu_location' ) );
         add_action('wp_enqueue_scripts', array( $this, 'register_theme_scripts' ));
         add_action('wp_head', array( $this, 'preload_scripts'), 5 );
         add_filter( 'rwmb_meta_boxes', array( $this, 'theme_register_taxonomy_meta_boxes' ) );
         add_action('admin_init', array( $this, 'load_common_theme_option' ));
-        add_action('widgets_init', array( $this, 'menu_location' ) );
+
     }
 
 

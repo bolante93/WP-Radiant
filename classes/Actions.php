@@ -87,7 +87,7 @@ class Actions
             <?php if( has_post_thumbnail() ): ?>
                 <img width="<?php esc_attr($width); ?>" height="<?php esc_attr($height); ?>" src="<?php echo esc_url($featured_image_url) ?>">
             <?php else:  ?>
-                <img src="<?php echo get_template_directory_uri() . '/assets/images/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg' ?>">
+                <img src="<?php echo get_template_directory_uri() . '/assets/images/ra-dragon-2nCeVeFWA_c-unsplash.jpg' ?>">
             <?php endif ?>
         <?php
     }
