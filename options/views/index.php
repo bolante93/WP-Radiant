@@ -1,10 +1,3 @@
-<?php
-
-$plugins =  new \classes\Plugin();
-//echo '<pre>'; var_dump($options['advanced']); die;
-?>
-
-
 <div class="container">
    <div class="section-padding">
        <div class="imco-archive-menu space-bottom">
