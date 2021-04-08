@@ -15,29 +15,45 @@ After installing composer run `php composer.phar dump-autoload`
   -
   **`wp_smascss_post_thumbnail`**
   Action for displaying post thumbnails with `width` and `height` attribute.
-
+  
 - **Filters** 
   -
-  **`google_fonts_url`**
+  - **`google_fonts_url`**
   A filter for removing or adding more google fonts
 
-  _**Example**: Adding new google font `functions.php`_ 
+    _**Example**: Adding new google font `functions.php`_ 
   
-  ```php
-  add_action('google_font_url', function( $urls ){
-    $urls['roboto'] = [
-        'url' => 'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap',
-        'media' => 'screen'
-    ];
-    return $urls;
-  });
-  ```
+      ```php
+      add_filter('google_font_url', function( $urls ){
+        $urls['roboto'] = [
+            'url' => 'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap',
+            'media' => 'screen'
+        ];
+        return $urls;
+      });
+      ```
 
-  _**Example**: Removing a font `functions.php`_
+      _**Example**: Removing a font `functions.php`_
+      
+      ```php
+      add_filter('google_font_url', function( $urls ){
+        unset($urls['roboto']);
+        return $urls;
+      }, 11);
+      ```
+    <br /> 
+  - **`post_thumbnail_attributes`**
+    A filter for removing or adding more google fonts
+    
+    _**Example**: Adding new google font `functions.php`_
+    
+      ```php
+      add_filter('post_thumbnail_attributes', function( $atts ){
+        $atts['loading'] = 'lazy';
+        $atts['width'] = '400';
+        $atts['height'] = '400';
+        return $atts;
+      });
+      ```
   
-  ```php
-  add_action('google_font_url', function( $urls ){
-    unset($urls['roboto']);
-    return $urls;
-  }, 11);
-  ```
+

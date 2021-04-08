@@ -100,13 +100,26 @@ class Helper
         return $result;
     }
 
-    static function parse_assc_array_to_attr( $array = [] ){
-        $attr = '';
+    /**
+     * Parse associative array to attribute="value" pair
+     * @param array $array
+     * @return string
+     */
+    static function parse_assc_array_to_attr( $array = [] ): string
+    {
+        if ( empty( $array ) )
+            return '';
+
         if ( isset( $array['src'] ) )
             unset( $array['src'] );
 
+        $attr = '';
         foreach ( $array as $attribute => $value) {
-            $attr .= $attribute . '="'.$value.'" ';
+            if ( empty ( $value ) ) {
+                unset( $array[$attribute] );
+            }else{
+                $attr .= $attribute . '="'.$value.'" ';
+            }
         }
        return $attr;
     }

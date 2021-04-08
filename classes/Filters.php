@@ -30,12 +30,15 @@ class Filters
 
     /**
      * Filter for adding additional attributes to `<img>` tags
-     * @param $atts
+     * @param $attributes
      * @return mixed
      */
-    public function post_thumbnail_attributes( $atts ) {
-        $atts['loading'] = 'lazy';
-        return $atts;
+    public function post_thumbnail_attributes( $attributes = [] ): array
+    {
+        $attributes['loading'] = 'lazy';
+        $attributes['width'] = '400';
+        $attributes['height'] = '400';
+        return $attributes;
     }
 
 }
