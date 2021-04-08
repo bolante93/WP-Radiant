@@ -76,7 +76,16 @@ class Helper
         <?php
     }
 
-
+    /**
+     * Parse two arguments to merge arrays.
+     * this is similar to @see wp_parse_args()
+     * but this method supports multi-dimensional array argument
+     *
+     * @param $array
+     * @param $defaults
+     * @return array
+     * @source  https://mekshq.com/recursive-wp-parse-args-wordpress-function/
+     */
     static function wp_parse_args_r( &$array, $defaults ) {
         $array = (array) $array;
         $defaults = (array) $defaults;
@@ -89,6 +98,17 @@ class Helper
             }
         }
         return $result;
+    }
+
+    static function parse_assc_array_to_attr( $array = [] ){
+        $attr = '';
+        if ( isset( $array['src'] ) )
+            unset( $array['src'] );
+
+        foreach ( $array as $attribute => $value) {
+            $attr .= $attribute . '="'.$value.'" ';
+        }
+       return $attr;
     }
 
 }

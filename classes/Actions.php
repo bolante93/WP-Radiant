@@ -78,6 +78,9 @@ class Actions
      */
     public function wp_smascss_post_thumbnail( $size = 'full' ) {
         $featured_image     = wp_get_attachment_image_src( get_post_thumbnail_id(), $size );
+        $atts = apply_filters( 'post_thumbnail_attributes', null );
+        $atts = Helper::parse_assc_array_to_attr($atts);
+
         if ( $featured_image ) {
             $featured_image_url = $featured_image[0];
             $width = $featured_image[1];
@@ -85,9 +88,9 @@ class Actions
         }
         ?>
             <?php if( has_post_thumbnail() ): ?>
-                <img width="<?php esc_attr($width); ?>" height="<?php esc_attr($height); ?>" src="<?php echo esc_url($featured_image_url) ?>">
+                <img <?php echo $atts ?> width="<?php esc_attr($width); ?>" height="<?php esc_attr($height); ?>" src="<?php echo esc_url($featured_image_url) ?>">
             <?php else:  ?>
-                <img src="<?php echo get_template_directory_uri() . '/assets/images/ra-dragon-2nCeVeFWA_c-unsplash.jpg' ?>">
+                <img <?php echo $atts ?> src="<?php echo get_template_directory_uri() . '/assets/images/ra-dragon-2nCeVeFWA_c-unsplash.jpg' ?>">
             <?php endif ?>
         <?php
     }
