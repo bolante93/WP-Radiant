@@ -36,8 +36,6 @@ class Filters
     public function post_thumbnail_attributes( $attributes = [] ): array
     {
         $attributes['loading'] = 'lazy';
-        $attributes['width'] = '400';
-        $attributes['height'] = '400';
         return $attributes;
     }
 

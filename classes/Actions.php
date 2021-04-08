@@ -64,7 +64,7 @@ class Actions
             <footer class="bg-light">
                 <div class="global-wrapper">
                     <p>
-                        Copyright &copy; 2021 Cloud Radius. All Rights Reserved.
+                        Copyright &copy; 2021 WPSMASCSS. All Rights Reserved.
                     </p>
                 </div>
             </footer>
