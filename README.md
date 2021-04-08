@@ -5,9 +5,9 @@
 # WPSMASCSS
 A theme template for IMCO wordpress Projects
 
-_This theme uses composer <a href="https://www.php-fig.org/psr/psr-4/">PSR-4</a> Coding Standard for theme development._ 
+_This theme uses composer <a target="_blank" href="https://www.php-fig.org/psr/psr-4/">PSR-4</a> Coding Standard for theme development._ 
 
-To install composer, refer to their <a href="https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos">documentation</a> page.
+To install composer, refer to their <a target="_blank" href="https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos">documentation</a> page.
 
 After installing composer run `php composer.phar dump-autoload`
 
