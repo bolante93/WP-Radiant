@@ -2,3 +2,69 @@
     Set default global styles for: 
     Navigation <nav></nav>
 */
+nav {
+	.global-wrapper.section-padding {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.menu-wrapper {
+		display: flex;
+		justify-content: space-between;
+		.brand {
+			img {
+				width: 150px;
+			}
+		}
+
+		ul.menu {
+			display: flex;
+			align-content: center;
+			align-items: center;
+			li {
+				margin-right: 40px;
+				display: inline-block;
+				> ul {
+					display: none;
+					position: absolute;
+					background: #ffffff;
+					height: fit-content;
+					z-index: 99;
+					padding: 20px;
+					margin-top: 0px;
+					border: 1px solid #394149;
+					> li {
+						margin-bottom: 15px;
+						display: block;
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+				&:hover {
+					> ul {
+						display: block;
+					}
+				}
+				&.has-sub {
+					&::after {
+						position: absolute;
+						margin-left: 5px;
+						content: " ";
+						background-image: url(../../assets/images/icons/chevron-down-outline.svg);
+						background-size: contain;
+						background-repeat: no-repeat;
+						background-position: center center;
+						height: 20px;
+						width: 15px;
+						transition-duration: 150ms;
+					}
+				}
+
+				a {
+					color: #394149;
+				}
+			}
+		}
+		// define the height of the menu
+	}
+}

@@ -3,34 +3,23 @@
 		padding: 100px 0;
 	}
 
-	.post-container {
-		display: flex;
-		flex-wrap: wrap;
-
-		.post-item {
-			flex: auto;
-			width: 100%;
-			// box-shadow: 0px 0px 12px 0px rgba(188, 188, 188, 0.61);
-			margin-bottom: 20px;
-			padding: 10px;
-			display: flex;
-
-			img {
-				width: 300px;
-				margin-right: 40px;
-			}
-		}
+	article {
+		border-bottom: 1px dashed #394149;
+		margin-bottom: 50px;
+		padding-bottom: 50px;
 	}
 }
 
 .active-sidebar {
 	display: flex;
 
-	.post-container {
-		flex-grow: 2;
-		padding: 0 40px;
+	.post-wrapper {
+		flex-shrink: 1;
+		width: calc(100% - 280px);
+		padding-right: 40px;
 	}
 	.sidebar {
-		flex-grow: 1;
+		width: 280px;
+		flex-shrink: 0;
 	}
 }
