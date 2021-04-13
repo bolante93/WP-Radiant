@@ -107,14 +107,6 @@ class Theme
     private function theme_supports() {
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails', ['post']);
-        register_post_type('design-archive',
-            [
-                'public'     => true,
-                'label'      => 'Design Archives',
-                'menu_icon'  => 'dashicons-editor-table',
-                'supports'   => array( 'title', 'editor', 'thumbnail', 'excerpt', 'page-attributes', 'author'),
-            ]
-        );
     }
 
     /**

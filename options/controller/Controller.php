@@ -1,6 +1,6 @@
 <?php
 
-namespace admin\options\Controller;
+namespace admin\options\controller;
 
 /**
  * Class Template

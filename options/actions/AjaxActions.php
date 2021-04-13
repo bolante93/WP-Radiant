@@ -1,7 +1,7 @@
 <?php
 
 
-namespace classes;
+namespace admin\options\actions;
 
 
 class AjaxActions
@@ -16,6 +16,9 @@ class AjaxActions
      * form submission
      */
     public function save_theme_options () {
+
+        $httpRef = $_SERVER['HTTP_REFERER'];
+
         if ( ! empty( $_POST['option'] ) && check_admin_referer( '_save_theme_options' ) ) {
 
             if ( isset( $_POST['option'] ) && $option = $_POST['option'] ) {
@@ -24,13 +27,16 @@ class AjaxActions
                         continue;
                     $option[$key] = sanitize_text_field( $value );
                 }
-//            $sanitized_option = serialize( $option );
-//            wp_die( var_dump($option) );
-                update_option('_theme_option', $option );
+                $success = update_option('_theme_option', $option );
+                if ( $success ) {
+                    $httpRef = add_query_arg( 'success', true, $_SERVER['HTTP_REFERER'] );
+                }else{
+                    $httpRef = add_query_arg( 'success', false, $_SERVER['HTTP_REFERER'] );
+                }
             }
-            wp_redirect( $_SERVER['HTTP_REFERER'] );
-            die(0);
         }
+        wp_redirect( $httpRef );
+        die(0);
     }
 
 }

@@ -1,11 +1,16 @@
 <div class="container">
    <div class="section-padding">
+       <?php if ( isset( $_GET['success'] ) ): ?>
+           <div class="notice notice-success is-dismissible" style="margin-bottom: 30px; margin-left: 0; margin-right: 0">
+               <p>Options successfully updated.</p>
+           </div>
+       <?php endif; ?>
        <div class="imco-archive-menu space-bottom">
            <img width="100" src="https://imco.space/assets/img/branding-full.svg">
        </div>
        <div class="border-bottom space-bottom"></div>
 
-       <form method="post" action="<?php echo esc_html( admin_url( 'admin.php' ) ); ?>">
+       <form name="theme_options" method="post" action="<?php echo esc_html( admin_url( 'admin.php' ) ); ?>">
            <div class="option-container">
                <div class="field-wrapper">
                    <h3> Fonts </h3>
